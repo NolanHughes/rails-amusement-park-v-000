@@ -1,0 +1,18 @@
+<h1>User Show Page</h1>
+
+<% if flash[:message] %>
+  <div class="message"><%= flash[:message] %></div>
+<% end %>
+<ul>
+  <li>Name: <%= current_user.name %></li>
+  <li>Mood: <%= current_user.mood %></li>
+  <li>Number of Tickets: <%= current_user.tickets %></li>
+  <li>Height: <%= current_user.height %></li>
+  <% if current_user.admin == true %>
+    <li>ADMIN</li>
+  <% end %>
+</ul>
+
+<%= link_to "See attractions", attractions_path %><br></br>
+
+<%= link_to "Log Out", logout_path, method: :delete %>
